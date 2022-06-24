@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Menswear_App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    @* Font Roboto *@
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Knewave&family=Roboto:wght@300;400;500;700&display=swap">
+    @* AOS Effect *@
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    @* MDB Boostrap *@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.css" />
+    @* Font Awesome *@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    @* Inoicons *@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/6.0.2/esm/ionicons.min.js">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/main.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/Menswear_App.styles.css" asp-append-version="true" />
+    <script src="https://kit.fontawesome.com/ef6887fdab.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="sticky-top header shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/logo/logo-bou-store.png" asp-append-version="true" class="main-logo">
+                </a>
+                <button class="navbar-toggler name-navbar" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <img src="~/images/logo/bars.png" asp-append-version="true" style="max-width: 40px;">
+                </button>
+                <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <form class="d-flex search-navbar">
+                            <input class=" offcanvas-title form-control me-2" type="search" placeholder="Search ..."
+                                id="offcanvasNavbarLabel" aria-label="Search">
+                            <a href=""><i class="fa-solid fa-magnifying-glass search-icons"></i></a>
+                        </form>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body display-offcanvas">
+                        <ul class="navbar-nav justify-content-end flex-grow- pe-3">
+                            <li class="nav-item position-relative">
+                                <a class="nav-link underlined-hover background-hover" asp-area="" asp-controller="Home"
+                                    asp-action="Index">
+                                    <img src="~/images/logo/home.png" asp-append-version="true" class="icon-navbar">
+                                    HOME
+                                </a>
+                            </li>
+                            <li class="nav-item position-relative">
+                                <a class="nav-link underlined-hover background-hover" asp-area=""
+                                    asp-controller="Contact" asp-action="Index">
+                                    <img src="~/images/logo/contact-logo.png" asp-append-version="true"
+                                        class="icon-navbar">
+                                    CONTACT
+                                </a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle underlined-hover background-hover" href="#"
+                                    id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <img src="~/images/logo/shirt.png" asp-append-version="true" class="icon-navbar">
+                                    TOP
+                                </a>
+                                <ul class="dropdown-menu dropdown " aria-labelledby="offcanvasNavbarDropdown">
+                                    <li><a class="dropdown-item" href="#">TShirt</a></li>
+                                    <hr class="hr-drop">
+                                    <li><a class="dropdown-item" href="#">Shirt & Polo</a></li>
+                                    <hr class="hr-drop">
+                                    <li><a class="dropdown-item" href="#">Hoodie & Sweater</a></li>
+                                    <hr class="hr-drop">
+                                    <li><a class="dropdown-item" href="#">Outerwear</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle underlined-hover background-hover" href="#"
+                                    id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <img src="~/images/logo/short.png" asp-append-version="true" class="icon-navbar">
+                                    BOTTOM
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Short</a></li>
+                                    <hr class="hr-drop">
+                                    <li><a class="dropdown-item" href="#">Pant</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle underlined-hover background-hover" href="#"
+                                    id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <img src="~/images/logo/account.png" asp-append-version="true" class="icon-navbar">
+                                    ACCOUNT
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Account"
+                                            asp-action="Login">Login</a></li>
+                                    <hr class="hr-drop">
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Account"
+                                            asp-action="Register">Register</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn btn-outline-dark cart-button">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class=" d-xl-inline-block">Cart </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-fluid container-fluid-no-padding">
+        <main role="main" class="pb-5">
+            @RenderBody()
+        </main>
+    </div>
+
+    <div class="background-color-footer container-fluid container-fluid-no-padding">
+        <footer class="text-center text-lg-start text-muted">
+            <section class="d-flex justify-content-center p-4 border-bottom">
+                <div class="">
+                    <a href="" class="me-4 social-icons">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="" class="me-4 social-icons">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="" class="me-4 social-icons">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="" class="social-icons">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </section>
+
+            <section class="">
+                <div class="container text-center text-md-start mt-5">
+                    <div class="row mt-3">
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                <i class="fas fa-gem me-3"></i>Bou Menswear
+                            </h6>
+                            <p>
+                                Welcome to Bou Menswear, which will bring memorable and amazing experiences on
+                                our own products.
+                            </p>
+                        </div>
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                Products
+                            </h6>
+                            <p>
+                                <a href="#!" class="text-reset">Shirts</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Pants & Shorts</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Accessories</a>
+                            </p>
+                        </div>
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                Useful links
+                            </h6>
+                            <p>
+                                <a href="#!" class="text-reset">Pricing</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Settings</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Orders</a>
+                            </p>
+                            <p>
+                                <a href="#!" class="text-reset">Help</a>
+                            </p>
+                        </div>
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                Contact
+                            </h6>
+                            <p><i class="fas fa-home me-3"></i>Hanoi, HN 11525, VN</p>
+                            <p><i class="fas fa-envelope me-3"></i>boustore@gmail.com</p>
+                            <p><i class="fas fa-phone me-3"></i>+ 01 234 567 88</p>
+                            <p><i class="fas fa-print me-3"></i>+ 01 234 567 89</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="text-center p-3 footer" style="font-size: 12px; background-color: #f5fcf4;">
+                ©2022 created by Nguyen Lam Chuc
+            </div>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.1.0/mdb.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            @* duration: 1000, *@
+        });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

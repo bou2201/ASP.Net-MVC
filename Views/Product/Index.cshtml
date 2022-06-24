@@ -1,0 +1,54 @@
+@model Product
+@{
+    ViewData["Title"] = "Product Page";
+    var viewProductsData = ViewData["Product"];
+}
+
+@if (viewProductsData is List<Product>)
+{
+    List<Product> products = (List<Product>)viewProductsData;
+    @* var LengthProducts = products.Count; *@
+    <div class="container mb-5 mt-5">
+        <h4 class="mb-5 underlied-text" data-aos="zoom-in-down"><strong>Product Listing</strong></h4>
+        <div class="row">
+            @foreach (var item in products)
+            {
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                    data-mdb-ripple-color="light">
+                            @* <img src="~/images/product@Html.DisplayFor(Model => item.ProductImage)" class="w-100"> *@
+                            @* <img src="~/images/product@Url.Content(Model.ProductImage)" class="w-100"> *@
+                            <img src="~/images/product/pics1.jpg" class="w-75 mx-auto d-block" asp-append-version="true" />
+                            <a href='@Url.Action("Details", "Product", new {id = item.ProductId})'>
+                                <div class="mask">
+                                    <div class="d-flex justify-content-start align-items-end h-100">
+                                        <h5><span class="badge bg-primary ms-2">New</span></h5>
+                                    </div>
+                                </div>
+                                <div class="hover-overlay">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                </div>
+                            </a>
+                        </div>
+                        @* @Html.ActionLink("", "Details", new { id=item.ProductId }) *@
+                        <div class="card-body">
+                            <a href="" class="text-reset text-center">
+                                <h5 class="card-title mb-3">
+                                    @Html.DisplayFor(Model => item.ProductName)
+                                </h5>
+                            </a>
+                            <a href="" class="text-reset text-center">
+                                <p>@Html.DisplayFor(Model => item.ProductBrand)</p>
+                            </a>
+                            <h6 class="mb-3 text-center">
+                                @Html.DisplayFor(Model => item.ProductPrice)0 ₫
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+;

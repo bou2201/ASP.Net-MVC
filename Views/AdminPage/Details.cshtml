@@ -1,0 +1,29 @@
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@{
+    ViewData["Title"] = "Details Product";
+    var viewProductsData = ViewData["Product"];
+}
+
+<div class="text-center">
+    <h1 class="display-4">Product Details</h1>
+    <p>This is Product Index Page</p>
+    @if (viewProductsData == null)
+    {
+        <h3>@TempData["msg"]</h3>
+    }
+    else if (viewProductsData is Product)
+    {
+        var item = (Product)viewProductsData;
+        <dl>
+            <li>Product ID: @item.ProductId</li>
+            <li>Product Name: @item.ProductName</li>
+            <li>Price: @item.ProductPrice VND</li>
+            <li>Brand: @item.ProductBrand</li>
+            <li>Description: @item.ProductDescription</li>
+            <li>Material: @item.ProductMaterial</li>
+            <li>Image: @item.ProductImage</li>
+        </dl>
+    }
+</div>

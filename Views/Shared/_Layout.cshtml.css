@@ -1,0 +1,29 @@
+﻿/* HEADER */
+header {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+/* FOOTER */
+.background-color-footer {
+  background-color: #d6e5d8 !important;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 6px;
+} 
+
+.social-icons {
+  text-decoration: unset;
+  list-style: none;
+  font-size: 22px;
+  color: inherit !important;
+}
+
+.text-reset {
+  text-decoration: none;
+}
+

@@ -1,0 +1,101 @@
+@{
+    ViewData["Title"] = "Details Product";
+    var viewProductsData = ViewData["Product"];
+}
+@if (viewProductsData == null)
+{
+    <h3>@TempData["msg"]</h3>
+}
+else if (viewProductsData is Product)
+{
+    var item = (Product)viewProductsData;
+    @* <dl>
+        <li>Product ID: @item.ProductId</li>
+        <li>Product Name: @item.ProductName</li>
+        <li>Price: @item.ProductPrice VND</li>
+        <li>Brand: @item.ProductBrand</li>
+        <li>Description: @item.ProductDescription</li>
+        <li>Material: @item.ProductMaterial</li>
+        <li>Image: @item.ProductImage</li>
+        </dl> *@
+    <div class="container mt-4">
+        <div class="ecommerce-gallery" data-mdb-zoom-effect="true" data-mdb-auto-height="true">
+            <div class="row py-3 shadow-5">
+                <div class="col-lg-6 col-md-12" style="padding: 16px;">
+                    <div class="col-12 mb-1">
+                        <div class="lightbox">
+                            <img src="~/images/product/pics1.jpg" alt="Gallery image 1"
+                            class="ecommerce-gallery-main-img active w-100" />
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-3 mt-1">
+                            <img src="~/images/product/pics1_1.jpg"
+                            data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/14a.webp"
+                            alt="Gallery image 1" class="active w-100" />
+                        </div>
+                        <div class="col-3 mt-1">
+                            <img src="~/images/product/pics1_2.jpg"
+                            data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
+                            alt="Gallery image 2" class="w-100" />
+                        </div>
+                        <div class="col-3 mt-1">
+                            <img src="~/images/product/pics1_3.jpg"
+                            data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp"
+                            alt="Gallery image 3" class="w-100" />
+                        </div>
+                        <div class="col-3 mt-1">
+                            <img src="~/images/product/pics1_4.jpg"
+                            data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/15a.webp"
+                            alt="Gallery image 4" class="w-100" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container d-lg-none " data-aos="fade-right">
+                    <div class="lines mx-auto" style="margin: 20px auto !important;">
+                        <div class="diamond"></div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-12 details-text" style="padding-top: 16px;">
+                    <h4 class="text-left text-dark">@item.ProductName</h4>
+                    <div class="rating">
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <span class="review-no">41 reviews</span>
+                    </div>
+                    <p class="product-description text-dark mt-4">@item.ProductDescription . Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Corporis odio laborum libero reiciendis, quas itaque assumenda
+                        suscipit harum obcaecati! Vero harum qui commodi ex expedita fugiat illum quisquam eos fugit!</p>
+                    <h5 class="text-dark mt-4 ">Current Price: 
+                        <span style="color: #f00202; margin-left:20px; font-size: 24px" >@item.ProductPrice₫</span>
+                    </h5>
+                    <p class="vote mt-4"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+                    <h5 class="sizes mt-4">Sizes:
+                        <span class="size" data-toggle="tooltip" title="small">s</span>
+                        <span class="size" data-toggle="tooltip" title="medium">m</span>
+                        <span class="size" data-toggle="tooltip" title="large">l</span>
+                        <span class="size" data-toggle="tooltip" title="xtra large">xl</span>
+                    </h5>
+                    <h5 class="colors mt-3">Colors:
+                        <span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span>
+                        <span class="color green"></span>
+                        <span class="color blue"></span>
+                    </h5>
+                    <div class="action justify-content-center mx-auto text-center mt-5">
+                        <button class="add-to-cart btn btn-outline-success w-50 rounded" type="button">add to cart <i
+                            class="fa-solid fa-cart-shopping"></i></button>
+                        @* <button class="like btn btn-outline-warning" type="button"><span
+                            class="fa fa-heart"></span></button> *@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

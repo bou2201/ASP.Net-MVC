@@ -1,0 +1,30 @@
+/* _content/Menswear_App/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* HEADER */
+header[b-he17hk73l7] {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+/* FOOTER */
+.background-color-footer[b-he17hk73l7] {
+  background-color: #d6e5d8 !important;
+}
+.footer[b-he17hk73l7] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 6px;
+} 
+
+.social-icons[b-he17hk73l7] {
+  text-decoration: unset;
+  list-style: none;
+  font-size: 22px;
+  color: inherit !important;
+}
+
+.text-reset[b-he17hk73l7] {
+  text-decoration: none;
+}
+

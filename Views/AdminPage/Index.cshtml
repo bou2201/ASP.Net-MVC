@@ -1,0 +1,41 @@
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@model Product
+@{
+    ViewData["Title"] = "Product Page";
+    var viewProductsData = ViewData["Product"];
+}
+
+<div class="text-left mx-auto container">
+    <h1 class="display-4 text-center">Product List</h1>
+    <p class="text-center">This is All Product Page</p>
+    @* @Html.ActionLink("Add Product", "Create", null) *@
+    @if (viewProductsData is List<Product>)
+    {
+        List<Product> products = (List<Product>)viewProductsData;
+        <table class="table table-bordered table-hover table-dark table-striped">
+            <tr>
+                <th>Product Id</th>
+                <th>Product Name</th>
+                <th>Unit Price (VND)</th>
+                <th>Brand</th>
+                <th>&nbsp;</th>
+            </tr>
+            @foreach (var item in products)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(Model => item.ProductId)</td>
+                    <td>@Html.DisplayFor(Model => item.ProductName)</td>
+                    <td>@Html.DisplayFor(Model => item.ProductPrice)</td>
+                    <td>@Html.DisplayFor(Model => item.ProductBrand)</td>       
+                    <td class="text-center">
+                        @Html.ActionLink("Details", "Details", new { id=item.ProductId }) |
+                        @Html.ActionLink("Edit", "Edit", new { id=item.ProductId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id=item.ProductId })
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+</div>
